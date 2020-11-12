@@ -29,6 +29,9 @@ body {
 	flex-direction: column;
 }
 
+.lock {
+	overflow: hidden;
+}
 
 .body {
 	flex: 1 1 auto;
@@ -107,7 +110,8 @@ header .active{
 .first h1 {
 	text-align: center;
 	margin-top: 40px;
-	color: #FFF;
+	color: #212121;
+	font-size: 35px;
 }
 
 .infoBox {

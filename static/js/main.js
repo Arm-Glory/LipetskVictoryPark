@@ -10,14 +10,16 @@ function aboutToggle() {
     }
 }
 
+var showBox = document.querySelector("#showBox");
+var showBoxImg = showBox.querySelector("img");
+var body = document.querySelector("body");
+
 function imgBoxClose(it) {
 	let block = it.parentNode.parentNode;
 	block.style.visibility = 'hidden';
-	block.style.opacity = '0'
+	block.style.opacity = '0';
+	body.classList.remove("lock");
 }
-
-var showBox = document.querySelector("#showBox");
-var showBoxImg = showBox.querySelector("img")
 
 var imgs = document.getElementsByClassName("showImg");
 for (let i=0; i<imgs.length; i++) {
@@ -25,6 +27,7 @@ for (let i=0; i<imgs.length; i++) {
 		let img = imgs[i].parentNode.querySelector("img");
 		showBoxImg.setAttribute("src", img.getAttribute("src"));
 		showBox.style.visibility = 'visible';
-		showBox.style.opacity = '1'
+		showBox.style.opacity = '1';
+		body.classList.add("lock");
 	})
 }
