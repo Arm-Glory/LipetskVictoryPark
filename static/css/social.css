@@ -1,0 +1,99 @@
+.social {
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.social a {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #212121;
+	font-size: 25px;
+	margin-left: 20px;
+	width: 65px;
+	height: 65px;
+	background: #BBB;
+	border-radius: 10px;
+	transition: background, transform .2s;
+}
+
+.social a span {
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.social a:hover span {
+	opacity: 0;
+}
+
+.social a:hover {
+	transform: translateY(5px);
+	color: #FFF;
+}
+
+.social a:first-child {
+	margin: 0;
+}
+
+.social a[class="fab fa-vk"]:hover {
+	background: #4c75a3;
+}
+
+.social a[class="fab fa-facebook-f"]:hover {
+	background: #3B5998;
+}
+
+.social a[class="fab fa-instagram"]:hover {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.social a[class="fab fa-twitter"]:hover {
+	background: #55ACEE;
+}
+
+.social a[class="fab fa-github"]:hover {
+	background: #000;
+}
+
+.social a[class="fab fa-skype"]:hover {
+	background: #00AFF0;
+}
+
+.social a[class="fab fa-youtube"]:hover {
+	background: #FF0000;
+}
+
+@media (max-width: 620px) {
+	.social a {
+		margin-left: 2.5%;
+		font-size: 140%;
+		width: 50px;
+		height: 50px;
+	}
+
+	.social a span {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 442px) {
+	.social a {
+		margin-left: 1.5%;
+		font-size: 120%;
+		width: 40px;
+		height: 40px;
+	}
+
+	.social a span {
+		font-size: 8px;
+	}
+}
