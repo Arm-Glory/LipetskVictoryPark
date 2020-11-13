@@ -202,7 +202,7 @@ header .active{
 }
 
 .infoSource a:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	box-shadow: 0 5px #00B4FF;
 	background: #33c3ff;
 	transition: .2s;
