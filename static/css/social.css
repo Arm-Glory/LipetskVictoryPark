@@ -16,7 +16,7 @@
 	margin-left: 20px;
 	width: 65px;
 	height: 65px;
-	background: #DDD !important;
+	background: #DDD;
 	border-radius: 10px;
 	box-shadow: -2px 2px 5px 0px #212121;
 	transition: background, transform .2s;
@@ -38,7 +38,7 @@
 
 .social a:hover {
 	transform: translateY(5px);
-	color: #FFF !important;
+	color: #FFF;
 }
 
 .social a:first-child {
@@ -46,31 +46,31 @@
 }
 
 .social a[class="fab fa-vk"]:hover {
-	background: #4c75a3 !important;
+	background: #4c75a3;
 }
 
 .social a[class="fab fa-facebook-f"]:hover {
-	background: #3B5998 !important;
+	background: #3B5998;
 }
 
 .social a[class="fab fa-instagram"]:hover {
-	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%) !important;
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 
 .social a[class="fab fa-twitter"]:hover {
-	background: #55ACEE !important;
+	background: #55ACEE;
 }
 
 .social a[class="fab fa-github"]:hover {
-	background: #000 !important;
+	background: #000;
 }
 
 .social a[class="fab fa-skype"]:hover {
-	background: #00AFF0 !important;
+	background: #00AFF0;
 }
 
 .social a[class="fab fa-youtube"]:hover {
-	background: #FF0000 !important;
+	background: #FF0000;
 }
 
 @media (max-width: 620px) {
