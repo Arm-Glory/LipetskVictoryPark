@@ -79,7 +79,7 @@ body.lock {
 	left: 0;
 	width: 20px;
 	height: 20px;
-	background: #00D8FF;
+	background: #00D8FF !important;
 	border-radius: 50%;
 	box-shadow: 0 0 10px #00D8FF,
 				0 0 20px #00D8FF,
@@ -113,7 +113,7 @@ header {
 }
 
 .aboutOpen {
-	background: #FB924C;
+	background: #FB924C !important;
 	height: 70px;
 	display: flex;
 	justify-content: center;
@@ -123,7 +123,7 @@ header {
 }
 
 .aboutOpen:hover {
-	background: #FF7200;
+	background: #FF7200 !important;
 	transition: .4s;
 }
 
@@ -142,7 +142,7 @@ header {
 	width: 100%;
 	height: 0;
 	background: #303030;
-	color: #FFF;
+	color: #FFF !important;
 	text-align: center;
 	overflow: hidden;
 	transition: .2s;
@@ -169,11 +169,11 @@ header {
 }
 
 .about a {
-	color: #50B0FA;
+	color: #50B0FA !important;
 }
 
 .first {
-	background: #8FFFC1;
+	background: #8FFFC1 !important;
 }
 
 .first h1 {
@@ -254,7 +254,7 @@ header {
 .textBox p:first-letter {
 	font-size: 30px;
 	font-weight: bold;
-	color: #404040;
+	color: #404040 !important;
 }
 
 .infoSource {
@@ -343,6 +343,7 @@ header {
 
 footer {
 	height: 130px;
+	background: #FFF !important;
 }
 
 footer h1 {
