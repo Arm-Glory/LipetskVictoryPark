@@ -27,9 +27,10 @@ body {
 	font-family: 'Work Sans', sans-serif;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
-.lock {
+body.lock {
 	overflow: hidden;
 }
 
@@ -43,13 +44,76 @@ body {
 	overflow: hidden;
 }
 
+#loader {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: #3B3B3B;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10000;
+}
+
+.loader {
+	position: relative;
+	width: 35%;
+	height: 35%;
+	animation: loaderBg 7s linear infinite;
+
+}
+
+.loader span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: rotate(calc(18deg * var(--i)));
+}
+
+.loader span::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: #00D8FF;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #00D8FF,
+				0 0 20px #00D8FF,
+				0 0 30px #00D8FF,
+				0 0 40px #00D8FF;
+	animation: loader 2s linear infinite;
+	animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes loader {
+	0%, {
+		transform: scale(1);
+	}
+	70%, 100% {
+		transform: scale(0)
+	}
+}
+
+@keyframes loaderBg {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+
 header {
 	width: 100%;
 	font-family: 'Bad Script', cursive;
 }
 
-.about__open {
-	background: #FF8534;
+.aboutOpen {
+	background: #FB924C;
 	height: 70px;
 	display: flex;
 	justify-content: center;
@@ -58,28 +122,33 @@ header {
 	border-bottom: 1px solid #000;
 }
 
-.about__open h1 {
+.aboutOpen:hover {
+	background: #FF7200;
+	transition: .4s;
+}
+
+.aboutOpen h1 {
 	color: #FFF;
 	font-size: 35px;
 	display: inline-flex;
 	align-items: flex-end;
 }
 
-.about__open span {
+.aboutOpen span {
 	font-size: 25px;
 }
 
 .about {
 	width: 100%;
 	height: 0;
-	background: #FF8E43;
+	background: #303030;
 	color: #FFF;
 	text-align: center;
 	overflow: hidden;
-	transition: .15s;
+	transition: .2s;
 }
 
-header .active{
+.about.active {
 	height: 75%;
 	transition: .7s;
 }
@@ -99,8 +168,8 @@ header .active{
 	padding-bottom: 30px;
 }
 
-.about h3 a {
-	color: #2BA2FD;
+.about a {
+	color: #50B0FA;
 }
 
 .first {
@@ -156,6 +225,16 @@ header .active{
 	width: 100%;
 }
 
+.imgBox1 {
+	float: left;
+	margin: -10px 20px 0 5px;
+}
+
+.imgBox2 {
+	float: right;
+    margin: 10px 0px 0 5px;
+}
+
 .textBox {
 	margin-top: 20px;
 }
@@ -174,16 +253,8 @@ header .active{
 
 .textBox p:first-letter {
 	font-size: 30px;
-}
-
-.imgBox1 {
-	float: left;
-	margin: -10px 20px 0 5px;
-}
-
-.imgBox2 {
-	float: right;
-    margin: 10px 0px 0 5px;
+	font-weight: bold;
+	color: #404040;
 }
 
 .infoSource {
@@ -198,13 +269,13 @@ header .active{
 	padding: 10px 20px;
 	background: #919191;
 	border-radius: 5px;
-	box-shadow: 0 5px #696969;
+	box-shadow: -1px 3px 10px 2px #696969;
 }
 
 .infoSource a:hover {
 	transform: scale(1.05);
-	box-shadow: 0 5px #00B4FF;
-	background: #33c3ff;
+	box-shadow: -1px 3px 10px 2px #00B4FF;
+	background: #60CFFD;
 	transition: .2s;
 }
 
@@ -218,9 +289,26 @@ header .active{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: .5s;
 	visibility: hidden;
 	opacity: 0;
+	transform: scale(0);
+	transition: .7s;
+}
+
+.showBox.active {
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1);
+	transition: .7s;
+}
+
+.closeArea {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
 }
 
 .showBlock {
@@ -238,7 +326,7 @@ header .active{
 	box-shadow: 2px 4px 8px 1px #000;
 }
 
-.showBlock .close {
+.showBlock .closeX {
 	position: absolute;
 	top: -2%;
 	right: -2%;
@@ -248,7 +336,7 @@ header .active{
 	cursor: pointer;
 }
 
-.showBlock .close:hover {
+.showBlock .closeX:hover {
 	background: #FF6A6A;
 	color: #FFF;
 }
@@ -292,7 +380,7 @@ footer h1 {
 
 @media (max-width: 565px) {
 	.about h3 {
-		font-size: 14px;
+		font-size: 13px;
 	}
 }
 
@@ -301,7 +389,7 @@ footer h1 {
 		max-width: 250px;
 	}
 
-	.about__open h1 {
+	.aboutOpen h1 {
 		font-size: 26px;
 	}
 

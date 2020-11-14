@@ -16,8 +16,9 @@
 	margin-left: 20px;
 	width: 65px;
 	height: 65px;
-	background: #BBB;
+	background: #DDD;
 	border-radius: 10px;
+	box-shadow: -2px 2px 5px 0px #212121;
 	transition: background, transform .2s;
 }
 

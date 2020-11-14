@@ -10,10 +10,37 @@
 	<link rel="stylesheet" type="text/css" href="static/css/iconsfont.css">
 	<link rel="stylesheet" type="text/css" href="static/css/social.css">
 </head>
-<body>
+<body class="lock">
+
+	<!-- Loader -->
+	<section id="loader">
+		<div class="loader">
+			<span style="--i:1"></span>
+			<span style="--i:2"></span>
+			<span style="--i:3"></span>
+			<span style="--i:4"></span>
+			<span style="--i:5"></span>
+			<span style="--i:6"></span>
+			<span style="--i:7"></span>
+			<span style="--i:8"></span>
+			<span style="--i:9"></span>
+			<span style="--i:10"></span>
+			<span style="--i:11"></span>
+			<span style="--i:12"></span>
+			<span style="--i:13"></span>
+			<span style="--i:14"></span>
+			<span style="--i:15"></span>
+			<span style="--i:16"></span>
+			<span style="--i:17"></span>
+			<span style="--i:18"></span>
+			<span style="--i:19"></span>
+			<span style="--i:20"></span>
+		</div>
+	</section>
+
 	<!-- Header -->
 	<header>
-		<div class="about__open" onclick="aboutToggle()">
+		<div class="aboutOpen" onclick="aboutToggle()">
 			<h1>Информация<span id="about-angle" class="fas fa-angle-right"></span></h1>
 		</div>
 		<div id="about" class="about">
@@ -101,18 +128,20 @@
 
 	<!-- Footer -->
 	<footer>
-		<h1>Мои социальные сети</h1>
+		<h1>Мои соц. сети</h1>
 		<div class="social">
-			<a href="https://vk.com/w_h_o_iam" class="fab fa-vk"><span>Vk</span></a>
-			<a href="https://www.facebook.com/profile.php?id=100014399370039" class="fab fa-facebook-f"><span>Facebook</span></a>
-			<a href="https://www.instagram.com/w_h_o_iam__" class="fab fa-instagram"><span>Instagram</span></a>
-			<a href="https://github.com/IIArmII/" class="fab fa-github"><span>GitHub</span></a>
+			<a target="_blank" href="https://vk.com/w_h_o_iam" class="fab fa-vk"><span>Vk</span></a>
+			<a target="_blank" href="https://www.facebook.com/profile.php?id=100014399370039" class="fab fa-facebook-f"><span>Facebook</span></a>
+			<a target="_blank" href="https://www.instagram.com/w_h_o_iam__" class="fab fa-instagram"><span>Instagram</span></a>
+			<a target="_blank" href="https://github.com/Arm-Glory/" class="fab fa-github"><span>GitHub</span></a>
 		</div>
 	</footer>
 
+	<!-- imgViewBox -->
 	<div id="showBox" class="showBox">
+		<div class="closeArea" onclick="showBoxClose(this);"></div>
 		<div class="showBlock">
-			<div class="close" onclick="imgBoxClose(this);">X</div>
+			<div class="closeX" onclick="showBoxClose(this);">X</div>
 			<img>
 		</div>
 	</div>

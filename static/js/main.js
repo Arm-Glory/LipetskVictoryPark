@@ -1,33 +1,56 @@
+function classToggle(item, c1, c2="") {
+		if (c1 && c2) {		
+			if (item.className.indexOf(c1) >= 0) {
+				item.className = item.className.replace(c1, c2);
+			} else {
+				item.className = item.className.replace(c2, c1);
+			}
+
+	} else {
+		if (item.className.indexOf(c1 || c2) >= 0) {
+			item.className = item.className.replace(c1 || c2, "");
+		}
+	}
+}
+
+/* Varables */
+var body = document.querySelector("body");
+var showBox = document.querySelector("#showBox");
+var showBoxImg = showBox.querySelector("img");
+
+/* Remove Loader */
+var t = window.onload = setInterval(function() {
+	document.querySelector("#loader").remove();
+	classToggle(body, "lock");
+	clearInterval(t)
+}, 3500)
+
+/* Toggle aboutBox */
 function aboutToggle() {
-    var toggle = document.getElementById("about-angle");
-    var about = document.getElementById("about");
+    var toggle = document.querySelector("#about-angle");
+    var about = document.querySelector("#about");
     if (toggle.className.indexOf("fa-angle-right") >= 0) {
-        toggle.className = "fas fa-angle-down";
+        classToggle(toggle, "fa-angle-right", "fa-angle-down");
         about.classList.add("active");
     } else {
-        toggle.className = "fas fa-angle-right";
-        about.classList.remove("active");
+        classToggle(toggle, "fa-angle-right", "fa-angle-down");
+        classToggle(about, "active");
     }
 }
 
-var showBox = document.querySelector("#showBox");
-var showBoxImg = showBox.querySelector("img");
-var body = document.querySelector("body");
-
-function imgBoxClose(it) {
-	let block = it.parentNode.parentNode;
-	block.style.visibility = 'hidden';
-	block.style.opacity = '0';
-	body.classList.remove("lock");
+/* ---- ImgView Close ------ */
+function showBoxClose(it) {
+	classToggle(showBox, "active");
+	classToggle(body, "lock");
 }
 
-var imgs = document.getElementsByClassName("showImg");
-for (let i=0; i<imgs.length; i++) {
-	imgs[i].addEventListener("click", function () {
-		let img = imgs[i].parentNode.querySelector("img");
+/* ---- ImgView event ------ */
+var imgs = document.querySelectorAll(".showImg");
+imgs.forEach(imgBx => {
+	imgBx.addEventListener("click", function () {
+		let img = imgBx.parentNode.querySelector("img");
 		showBoxImg.setAttribute("src", img.getAttribute("src"));
-		showBox.style.visibility = 'visible';
-		showBox.style.opacity = '1';
+		showBox.classList.add("active");
 		body.classList.add("lock");
-	})
-}
+})
+})
