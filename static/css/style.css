@@ -55,6 +55,11 @@ body.lock {
 	z-index: 10000;
 }
 
+#loader.inactive {
+	opacity: 0;
+	transition: 1s;
+}
+
 .loader {
 	position: relative;
 	width: 35%;

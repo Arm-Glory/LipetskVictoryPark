@@ -1,29 +1,17 @@
-function classToggle(item, c1, c2="") {
-		if (c1 && c2) {		
-			if (item.className.indexOf(c1) >= 0) {
-				item.className = item.className.replace(c1, c2);
-			} else {
-				item.className = item.className.replace(c2, c1);
-			}
-
-	} else {
-		if (item.className.indexOf(c1 || c2) >= 0) {
-			item.className = item.className.replace(c1 || c2, "");
-		}
-	}
-}
-
 /* Varables */
 var body = document.querySelector("body");
 var showBox = document.querySelector("#showBox");
 var showBoxImg = showBox.querySelector("img");
 
 /* Remove Loader */
-var t = window.onload = setInterval(function() {
-	document.querySelector("#loader").remove();
+window.onload = setTimeout(() => {
+	let loader = document.querySelector("#loader");
 	classToggle(body, "lock");
-	clearInterval(t)
-}, 3500)
+	loader.classList.add("inactive");
+	setTimeout(() => {
+		loader.remove();
+	}, 5000);
+}, 4000);
 
 /* Toggle aboutBox */
 function aboutToggle() {
@@ -54,3 +42,19 @@ imgs.forEach(imgBx => {
 		body.classList.add("lock");
 })
 })
+
+
+function classToggle(item, c1, c2="") {
+		if (c1 && c2) {		
+			if (item.className.indexOf(c1) >= 0) {
+				item.className = item.className.replace(c1, c2);
+			} else {
+				item.className = item.className.replace(c2, c1);
+			}
+
+	} else {
+		if (item.className.indexOf(c1 || c2) >= 0) {
+			item.className = item.className.replace(c1 || c2, "");
+		}
+	}
+}
