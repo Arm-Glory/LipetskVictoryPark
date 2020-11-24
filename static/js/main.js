@@ -2,16 +2,31 @@
 var body = document.querySelector("body");
 var showBox = document.querySelector("#showBox");
 var showBoxImg = showBox.querySelector("img");
+var upBtn = document.querySelector(".upBtn");
 
 /* Remove Loader */
 window.onload = setTimeout(() => {
 	let loader = document.querySelector("#loader");
 	body.classList.toggle("lock");
 	loader.classList.add("inactive");
-	setTimeout(() => {
-		loader.remove();
-	}, 5000);
 }, 4000);
+setTimeout(() => {
+	loader.remove();
+}, 5000);
+
+/* Up Button */
+document.addEventListener("scroll", function () {
+	if (pageYOffset >= 100) {
+		upBtn.classList.add("active");
+	} else {
+		upBtn.classList.remove("active");
+	}
+})
+
+/* Up Button function */
+upBtn.onclick = function () {
+	document.querySelector("#up").scrollIntoView({behavior: 'smooth'})
+}
 
 /* Toggle aboutBox */
 function aboutToggle() {

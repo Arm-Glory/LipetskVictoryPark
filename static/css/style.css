@@ -182,7 +182,7 @@ header {
 }
 
 .first {
-	background: #8FFFC1;
+	background: hsl(160, 100%, 50%);
 }
 
 .first h1 {
@@ -241,7 +241,7 @@ header {
 
 .imgBox2 {
 	float: right;
-    margin: 10px 0px 0 5px;
+    margin: 10px 5px 0 5px;
 }
 
 .textBox {
@@ -357,6 +357,36 @@ footer {
 footer h1 {
 	text-align: center;
 	margin-top: 20px;
+}
+
+.upBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #FFF;
+	color: #212121;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 50%;
+	border: 2px solid #212121;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	visibility: hidden;
+	opacity: 0;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.upBtn:hover {
+	box-shadow: 2px 4px 8px 1px #212121;
+}
+
+.upBtn.active {
+	visibility: visible;
+	opacity: 1;
+	transition: .5s;
 }
 
 @media (max-width: 1110px) {
