@@ -6,7 +6,7 @@ var showBoxImg = showBox.querySelector("img");
 /* Remove Loader */
 window.onload = setTimeout(() => {
 	let loader = document.querySelector("#loader");
-	classToggle(body, "lock");
+	body.classList.toggle("lock");
 	loader.classList.add("inactive");
 	setTimeout(() => {
 		loader.remove();
@@ -22,14 +22,14 @@ function aboutToggle() {
         about.classList.add("active");
     } else {
         classToggle(toggle, "fa-angle-right", "fa-angle-down");
-        classToggle(about, "active");
+        about.classList.toggle("active");
     }
 }
 
 /* ---- ImgView Close ------ */
 function showBoxClose(it) {
-	classToggle(showBox, "active");
-	classToggle(body, "lock");
+	showBox.classList.toggle("active");
+	body.classList.toggle("lock");
 }
 
 /* ---- ImgView event ------ */
@@ -44,17 +44,10 @@ imgs.forEach(imgBx => {
 })
 
 
-function classToggle(item, c1, c2="") {
-		if (c1 && c2) {		
-			if (item.className.indexOf(c1) >= 0) {
-				item.className = item.className.replace(c1, c2);
-			} else {
-				item.className = item.className.replace(c2, c1);
-			}
-
+function classToggle(item, c1, c2) {
+	if (item.className.indexOf(c1) >= 0) {
+		item.className = item.className.replace(c1, c2);
 	} else {
-		if (item.className.indexOf(c1 || c2) >= 0) {
-			item.className = item.className.replace(c1 || c2, "");
-		}
+		item.className = item.className.replace(c2, c1);
 	}
 }
