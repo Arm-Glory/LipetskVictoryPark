@@ -41,7 +41,7 @@ function showBoxClose(it) {
 }
 
 /* ---- ImgView event ------ */
-var imgs = document.querySelectorAll(".showImg");
+var imgs = document.querySelectorAll(".imgBox");
 imgs.forEach(imgBx => {
 	imgBx.addEventListener("click", function () {
 		let img = imgBx.parentNode.querySelector("img");
