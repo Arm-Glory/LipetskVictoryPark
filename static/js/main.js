@@ -3,6 +3,7 @@ var body = document.querySelector("body");
 var showBox = document.querySelector("#showBox");
 var showBoxImg = showBox.querySelector("img");
 var upBtn = document.querySelector(".upBtn");
+var aboutOpen = document.querySelector(".aboutOpen");
 
 /* Remove Loader */
 window.onload = setTimeout(() => {
@@ -25,20 +26,12 @@ document.addEventListener("scroll", function () {
 
 /* Up Button function */
 upBtn.onclick = function () {
-	document.querySelector("#up").scrollIntoView({behavior: 'smooth'})
+	document.querySelector("header").scrollIntoView({behavior: 'smooth'})
 }
 
 /* Toggle aboutBox */
-function aboutToggle() {
-    var toggle = document.querySelector("#about-angle");
-    var about = document.querySelector("#about");
-    if (toggle.className.indexOf("fa-angle-right") >= 0) {
-        classToggle(toggle, "fa-angle-right", "fa-angle-down");
-        about.classList.add("active");
-    } else {
-        classToggle(toggle, "fa-angle-right", "fa-angle-down");
-        about.classList.toggle("active");
-    }
+aboutOpen.onclick = function () {
+	this.classList.toggle("active");
 }
 
 /* ---- ImgView Close ------ */
@@ -57,12 +50,3 @@ imgs.forEach(imgBx => {
 		body.classList.add("lock");
 })
 })
-
-
-function classToggle(item, c1, c2) {
-	if (item.className.indexOf(c1) >= 0) {
-		item.className = item.className.replace(c1, c2);
-	} else {
-		item.className = item.className.replace(c2, c1);
-	}
-}

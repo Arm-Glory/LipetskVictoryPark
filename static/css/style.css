@@ -136,11 +136,14 @@ header {
 	color: #FFF;
 	font-size: 35px;
 	display: inline-flex;
-	align-items: flex-end;
 }
 
-.aboutOpen span {
-	font-size: 25px;
+#about-angle {
+	font-size: 35px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    transition: .5s;
 }
 
 .about {
@@ -154,12 +157,15 @@ header {
 	text-align: center;
 	overflow: hidden;
 	z-index: 1000000;
-	transition: .2s;
+	transition: .7s;
 }
 
-.about.active {
+.aboutOpen.active #about-angle {
+	transform: rotate(90deg);
+}
+
+.aboutOpen.active ~ .about {
 	height: 200px;
-	transition: .7s;
 }
 
 .about h1 {
@@ -203,6 +209,7 @@ header {
 	overflow: hidden;
 	position: relative;
 	box-shadow: 2px 4px 8px 1px #000; 
+	cursor: pointer;
 }
 
 .imgBox img {
@@ -215,13 +222,13 @@ header {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 0;
+	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: rgba(51, 51, 51, 0.7);
-	font-size: 50px;
+	font-size: 40px;
 	color: #FFF;
 	visibility: hidden;
 	opacity: 0;
@@ -231,7 +238,7 @@ header {
 .imgBox:hover .showImg {
 	visibility: visible;
 	opacity: 0.7;
-	width: 100%;
+	transition: .2s;
 }
 
 .imgBox1 {
@@ -351,7 +358,7 @@ header {
 }
 
 footer {
-	height: 150px;
+	flex: 0 0 180px;
 }
 
 footer h1 {
@@ -368,6 +375,8 @@ footer h1 {
 	width: 40px;
 	height: 40px;
 	font-size: 20px;
+	font-weight: 700;
+	transform: rotate(-90deg);
 	border-radius: 50%;
 	border: 2px solid #212121;
 	position: fixed;
