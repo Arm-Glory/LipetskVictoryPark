@@ -1,9 +1,12 @@
 /* Varables */
 var body = document.querySelector("body");
+var header = document.querySelector("header");
 var showBox = document.querySelector("#showBox");
 var showBoxImg = showBox.querySelector("img");
 var upBtn = document.querySelector(".upBtn");
 var aboutOpen = document.querySelector(".aboutOpen");
+var closeArea = document.querySelector(".closeArea");
+var closeX = document.querySelector(".closeX");
 
 /* Remove Loader */
 window.onload = setTimeout(() => {
@@ -26,7 +29,7 @@ document.addEventListener("scroll", function () {
 
 /* Up Button function */
 upBtn.onclick = function () {
-	document.querySelector("header").scrollIntoView({behavior: 'smooth'})
+	document.querySelector("#scroll-to").scrollIntoView({behavior: 'smooth'})
 }
 
 /* Toggle aboutBox */
@@ -34,11 +37,23 @@ aboutOpen.onclick = function () {
 	this.classList.toggle("active");
 }
 
+/* Fixing aboutBox */
+window.addEventListener("scroll", function () {
+    if (pageYOffset > 70) {
+        header.classList.add("active");
+    } else {
+        header.classList.remove("active");
+    }
+});
+
 /* ---- ImgView Close ------ */
-function showBoxClose(it) {
+function showBoxClose() {
 	showBox.classList.toggle("active");
 	body.classList.toggle("lock");
 }
+closeArea.onclick = function () {showBoxClose();}
+closeX.onclick = function () {showBoxClose();}
+
 
 /* ---- ImgView event ------ */
 var imgs = document.querySelectorAll(".imgBox");
